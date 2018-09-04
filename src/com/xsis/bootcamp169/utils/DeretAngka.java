@@ -36,7 +36,7 @@ public class DeretAngka {
     }
     
     //1,1,2,3,5, .. etc
-    public int[] getFib(int n){
+    public static int[] getFib(int n){
         int[] dataFib = new int[n];
         dataFib[0] = 1;
         dataFib[1] = 1;
@@ -61,28 +61,22 @@ public class DeretAngka {
     }
     
     public String[] getAbjad(int n){
-        String[] a = {
-            "A","B","C", "D", "E", "F", "G"
-        };      
+        String[] a = { "A","B","C", "D", "E", "F", "G"};      
         return a;
     }
-    
     //output : 1, ,1, ,2, ,3, , etc..
     public String[] fibBlank(int n){
         String[] data = new String[n];
         int[] dataFib = getFib(n);
         String[] abjad = getAbjad(n);
-        
         int index = 0;
         int index2 =0;
-        
         for (int i = 0; i < n; i++) {
             if(i % 2 == 0) 
                 data[i] = dataFib[index++]+"";
             else 
                 data[i] = abjad[index2++] +"";
         }
-        
         return data;
     }
     
