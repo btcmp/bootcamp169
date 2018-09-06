@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class DeretAngka {
     
     //1, 3, 5 .. etc
-    public int[] getGanjil(int n){
+    public static int[] getGanjil(int n){
         int[] data = new int[n];
         int start = 1;
         for(int index = 0; index < n; index++){
@@ -60,7 +60,7 @@ public class DeretAngka {
         return data;
     }
     
-    public String[] getAbjad(int n){
+    public static String[] getAbjad(int n){
         String[] a = { "A","B","C", "D", "E", "F", "G"};      
         return a;
     }

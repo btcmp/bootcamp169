@@ -13,17 +13,37 @@ public class Template2 {
     
     int baris;
     int kolom;
+    int geserBawah = 0;
+    int geserKanan = 0;
+    
     String[][] matrix;
     
     public void setMatrix(int n){
         this.baris = n;
         this.kolom = n;
+        
         this.matrix = new String[this.baris][this.kolom];
         for (int i = 0; i < this.baris; i++) {
             for (int j = 0; j < this.kolom; j++) {
-                this.matrix[i][j] = "*";
+                setShape(matrix);
             }
         }
+    }
+    
+    public void setShape(String[][] data){
+        this.geserBawah = 0;
+        this.geserKanan = 0;
+        for(int shape = 0; shape < 4; shape++){
+            for (int i = 0; i < 2; i++) {
+                for (int j = 0; j < 2; j++) {
+                    data[i+this.geserBawah][j+this.geserKanan] = "*";
+                }
+            }
+            
+            this.geserKanan = this.geserKanan + 2;
+            this.geserBawah = this.geserBawah + 2;
+        }
+        
     }
     
     public void showMatrix(){
