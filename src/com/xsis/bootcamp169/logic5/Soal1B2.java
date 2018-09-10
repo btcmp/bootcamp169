@@ -3,17 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.xsis.bootcamp168.logic5;
+package com.xsis.bootcamp169.logic5;
 
 import com.xsis.bootcamp169.logic2.*;
 import com.xsis.bootcamp169.utils.MyLoop;
-import java.util.Arrays;
 
 /**
  *
  * @author arrizaqu
  */
-public class Soal1B {
+public class Soal1B2 {
     int baris;
     int kolom;
     String[][] matrix;
@@ -33,33 +32,18 @@ public class Soal1B {
     public void setMatrix(int n){
         this.baris = getMaxWidthColumn(n);
         this.kolom = getMaxWidthRow(n);
-        this.matrix = new String[this.baris][this.kolom];
         MyLoop lp = new MyLoop();
-        int[] dataFib = lp.getBilanganTringularFrom0(n);
-        System.out.println(Arrays.toString(dataFib));
-      
+        int[] geser = lp.getBilanganTringularFrom0(n);
+        
+        this.matrix = new String[this.baris][this.kolom];
         for(int bangun = 0; bangun < n; bangun++){
-            for (int i = dataFib[bangun] ; i < dataFib[bangun + 1]; i++) {
-                for (int j = dataFib[bangun]; j < dataFib[bangun + 1]; j++) {
-                    this.matrix[i][j] = "*";
+            for (int i = 0; i < bangun+1; i++) {
+                for (int j = 0; j < bangun+1; j++) {
+                    this.matrix[i + geser[bangun]][j + geser[bangun]] = "*";
                 }
             }
         }
-//        for (int i = 0; i < 1; i++) {
-//            for (int j = 0; j < 1; j++) {
-//                this.matrix[i][j] = "*";
-//            }
-//        }
-//        for (int i = 1; i < 3; i++) {
-//            for (int j = 1; j < 3; j++) {
-//                this.matrix[i][j] = "*";
-//            }
-//        }
-//        for (int i = 3; i < 6; i++) {
-//            for (int j = 3; j < 6; j++) {
-//                this.matrix[i][j] = "*";
-//            }
-//        }
+        
     }
     
     public void showMatrix(){
@@ -72,7 +56,7 @@ public class Soal1B {
         }
     }
     public static void main(String[] args) {
-        Soal1B template = new Soal1B();
+        Soal1B2 template = new Soal1B2();
         template.setMatrix(4);
         template.showMatrix();
     }

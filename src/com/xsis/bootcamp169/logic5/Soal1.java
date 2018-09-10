@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.xsis.bootcamp168.logic5;
+package com.xsis.bootcamp169.logic5;
 
 import com.xsis.bootcamp169.logic2.*;
 import com.xsis.bootcamp169.utils.MyLoop;
@@ -12,34 +12,28 @@ import com.xsis.bootcamp169.utils.MyLoop;
  *
  * @author arrizaqu
  */
-public class Soal1B2 {
+public class Soal1 {
     int baris;
     int kolom;
     String[][] matrix;
     
-    public int getMaxWidthColumn(int n){
-        MyLoop lp = new MyLoop();
-        int hasil = lp.getBilanganTringularAkhir(n);
+    public int getMaxWidth(int n){
+        MyLoop ml = new MyLoop();
+        int hasil = ml.getBilanganTringularAkhir(n);
         return hasil;
     }
     
-    public int getMaxWidthRow(int n){
-        MyLoop lp = new MyLoop();
-        int hasil = lp.getBilanganTringularAkhir(n);
-        return hasil;
-    }
     
     public void setMatrix(int n){
-        this.baris = getMaxWidthColumn(n);
-        this.kolom = getMaxWidthRow(n);
-        MyLoop lp = new MyLoop();
-        int[] geser = lp.getBilanganTringularFrom0(n);
-        
+        this.baris = getMaxWidth(n);
+        this.kolom = getMaxWidth(n);
         this.matrix = new String[this.baris][this.kolom];
+        MyLoop ml = new MyLoop();
+        int[] geser = ml.getBilanganTringularFromZero(n);
         for(int bangun = 0; bangun < n; bangun++){
             for (int i = 0; i < bangun+1; i++) {
                 for (int j = 0; j < bangun+1; j++) {
-                    this.matrix[i + geser[bangun]][j + geser[bangun]] = "*";
+                      this.matrix[i+geser[bangun]][j+geser[bangun]] = "*"; 
                 }
             }
         }
@@ -56,8 +50,8 @@ public class Soal1B2 {
         }
     }
     public static void main(String[] args) {
-        Soal1B2 template = new Soal1B2();
-        template.setMatrix(4);
+        Soal1 template = new Soal1();
+        template.setMatrix(3);
         template.showMatrix();
     }
     

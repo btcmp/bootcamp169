@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.xsis.bootcamp168.logic5;
+package com.xsis.bootcamp169.logic5;
 
 import com.xsis.bootcamp169.logic2.*;
 import com.xsis.bootcamp169.utils.DeretAngka;
