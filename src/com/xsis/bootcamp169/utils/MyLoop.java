@@ -78,6 +78,15 @@ public class MyLoop {
         }
         return data;
     }
+   
+    public int[] getQuadrat(int n){
+        int[] data = new int[n];
+        for (int i = 0; i < n; i++) {
+            data[i] = i * i;
+        }
+        return data;
+    }
+    
     
     public static void main(String[] args) {
         MyLoop ml = new MyLoop();

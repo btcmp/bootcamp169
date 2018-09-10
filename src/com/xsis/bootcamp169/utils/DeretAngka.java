@@ -80,6 +80,14 @@ public class DeretAngka {
         return data;
     }
     
+    public static int[] getIncrement(int n){
+        int[] data = new int[n];
+        for (int i = 0; i < n; i++) {
+            data[i] = i+1;
+        }
+        return data;
+    }
+    
     public static void main(String[] args) {
         DeretAngka da = new DeretAngka();
         String[] result = da.fibBlank(9);
