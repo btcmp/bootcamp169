@@ -54,10 +54,35 @@ public class MyLoop {
         return data;
     }
     
+    public int[] getBilanganTringularFrom0(int n){
+        int[] data = new int[n + 1];
+        int index = 1;
+        int hasil = 0;
+        for (int i = 0; i < n + 1; i++) {
+            data[i] = hasil;
+            hasil = hasil + (index);
+            index++;
+        }
+        return data;
+    }
+    
+    
+    public int[] getBilanganTringularFromZero(int n){
+        int[] data = new int[n + 1];
+        int index = 1;
+        int hasil = 0;
+        for (int i = 0; i < n + 1; i++) {
+            data[i] = hasil;
+            hasil = hasil + (index);
+            index++;
+        }
+        return data;
+    }
+    
     public static void main(String[] args) {
         MyLoop ml = new MyLoop();
         int hasil = ml.getBilanganTringularAkhir(4);
-        int[] data = ml.getBilanganTringular(4);
+        int[] data = ml.getBilanganTringularFrom0(4);
         System.out.println("hasil : " + hasil);
         System.out.println(Arrays.toString(data));
     }
