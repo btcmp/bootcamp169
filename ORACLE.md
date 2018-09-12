@@ -4,13 +4,15 @@ select * from employees;
 select * from departments;
 ```
 
+# Oracle Database
+
 ## Oracle Hello World
 ```sql
 select 'hello world' from dual;
 ```
 
 ## Menampilkan Tanggal Sekarang
-### menampilkan tanggal sekarang
+## menampilkan tanggal sekarang
 ```sql
 select current_date from dual;
 ```
