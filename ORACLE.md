@@ -12,8 +12,7 @@ select * from departments;
 select 'hello world' from dual;
 ```
 
-## Menampilkan Tanggal Sekarang
-## menampilkan tanggal sekarang
+## Menampilkan tanggal sekarang
 ```sql
 select current_date from dual;
 ```
