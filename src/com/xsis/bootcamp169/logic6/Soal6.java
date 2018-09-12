@@ -20,30 +20,42 @@ public class Soal6 {
         this.baris = n*n;
         this.kolom = n*n;
         this.matrix = new String[this.baris][this.kolom];
-        
+        int start = getFirst(n);
         int geserI = 0;
         for(int block = 0; block < n; block++){
             int geserJ = 0;
             for(int bangun = 0; bangun < n; bangun++){
                 for (int i = 0; i < this.baris; i++) {
+                    int index = 0;
                     for (int j = 0; j < this.kolom; j++) {
                         //fokus ke piramid
                         if(i + j >= n/2 && j - i <= n/2 && i - j <= n/2 && i+j <= n + n /2 -1){
                             if(block == bangun){
-                                this.matrix[i+geserI][j+geserJ] = bangun + "";
-                            } else if(bangun + block == n - 1){
-                                 this.matrix[i+geserI][j+geserJ] = geserJ + "";
-                            }
-                            
+                                if(j < n/2){
+                                    this.matrix[i+geserI][j+geserJ] = start - index++ + "";
+                                } else {
+                                    this.matrix[i+geserI][j+geserJ] = start - index-- + "";
+                                }
+                                
+                            } 
                         }
                     }
                 }
                 geserJ = geserJ + (n);
             }
             geserI = geserI + (n);
+            start = start + getFirst(n);
         }
-        
-        
+    }
+    
+    public int getFirst(int n){
+        int increment = 0;
+        for(int i = 1; i <= n;i++){
+            if(i % 2 == 1){
+                increment = increment + 1;
+            }
+        }
+        return increment;
     }
     
     public void showMatrix(){
