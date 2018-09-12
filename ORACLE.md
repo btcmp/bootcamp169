@@ -1,21 +1,34 @@
 ## Selection
-```
+```sql
 select * from employees;
 select * from departments;
 ```
 
--- sql oracle hello world
+## Oracle Hello World
+```sql
 select 'hello world' from dual;
--- menampilkan tanggal sekarang
+```
+
+## Menampilkan Tanggal Sekarang
+### menampilkan tanggal sekarang
+```sql
 select current_date from dual;
--- operasi matematika 
+```
+
+## operasi matematika 
+```sql
 select 1 + 1 hasil from dual;
 select 2 + 2 * 10 from dual;
--- upper lower
+```
+
+## upper lower
+```sql
 SELECT UPPER('HAloWodrld') from dual;
 SELECT LOWER('HAloWodrld') FROM DUAL;
+```
 
--- SELECT COLOMN and ALIAS NAME
+## SELECT COLOMN and ALIAS NAME
+```sql
 select 
   emp.first_name || '-' || emp.last_name AS full_name,
   emp.first_name nama_depan, 
@@ -23,25 +36,32 @@ select
   emp.salary "Gaji",
   emp.salary * 2 bonus
 from hr.employees emp;
+```
 
--- where conditional
+## where conditional
+```sql
 select * 
   from employees 
   where 
   upper(first_name) = upper('alAna') OR 1 = 1 
   and employee_id = 100;
-  
--- in condition
+```
+
+## IN condition
+```sql
 SELECT * FROM employees
 where employee_id = 100 OR employee_id = 104 OR employee_id = 105;
 
 SELECT * FROM employees
 where employee_id in (100, 104, 105);
+```
 
--- like condition 
+## like condition 
+```sql
 select * from employees where first_name like '%a'
 select * from employees where first_name like 'A%'
 select * from employees where first_name like '%a%'
+```
 
 -- JOIN
 -- 1. INNER JOIN
