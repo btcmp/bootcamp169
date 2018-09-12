@@ -1,10 +1,11 @@
+
+# Oracle Database
+
 ## Selection
 ```sql
 select * from employees;
 select * from departments;
 ```
-
-# Oracle Database
 
 ## Oracle Hello World
 ```sql
