@@ -36,9 +36,10 @@ public class Soal1B2 {
         int[] geser = lp.getBilanganTringularFrom0(n);
         
         this.matrix = new String[this.baris][this.kolom];
+        
         for(int bangun = 0; bangun < n; bangun++){
             for (int i = 0; i < bangun+1; i++) {
-                for (int j = 0; j < bangun+1; j++) {
+                for (int j = 0; j < this.kolom - bangun+1; j++) {
                     this.matrix[i + geser[bangun]][j + geser[bangun]] = "*";
                 }
             }
