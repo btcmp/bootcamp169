@@ -5,6 +5,8 @@
  */
 package com.xsis.bootcamp169.teory;
 
+import com.xsis.bootcamp169.logic2.Soal3;
+
 /**
  *
  * @author arrizaqu
@@ -28,5 +30,7 @@ public class MyContructor {
         Employee emp =  new Employee();
         Employee emp2 = new Employee("husni");
        // emp.info();
+        Soal3 soal3 = new Soal3();
+        soal3.setDataArray(0);
     }
 }

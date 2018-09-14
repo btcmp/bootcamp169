@@ -10,6 +10,7 @@ package com.xsis.bootcamp169.teory;
  * @author arrizaqu
  */
 class EmployeeX{ //super class
+    //properties
     private String name;
     private String email;
     private double salary=2000;
@@ -83,6 +84,5 @@ public class MyInheritance {
         //dir
         dir.setName("denis");
         System.out.println("name : "+ dir.getName() + ", salary : "+ dir.getSalary());
-        
     }
 }

@@ -29,9 +29,9 @@ public class Soal10 {
         
         for (int i = 0; i < this.baris; i++) {
             for (int j = 0; j < this.kolom; j++) {
-                if(i >= j && i % 2 == 0){
+                if(i == j && i % 2 == 0){
                     this.matrix[i][j] = index + "";
-                } else if(i + j >= n - 1 && i % 2 == 1){
+                } else if(i + j == n - 1 && i % 2 == 1){
                     this.matrix[i][j] = index +"";
                 }
             }
@@ -45,7 +45,12 @@ public class Soal10 {
     
         for (int i = 0; i < this.baris; i++) {
             for (int j = 0; j < this.kolom; j++) {
-                System.out.print(""+ this.matrix[i][j] + "\t");
+                if(this.matrix[i][j] != null){
+                    System.out.print(""+ this.matrix[i][j] + "\t");
+                } else {
+                    System.out.print("\t");
+                }
+                
             }
             System.out.println("");
         }

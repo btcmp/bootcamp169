@@ -11,6 +11,7 @@
 9. Java Beans and Encapsulation
 10. Polymorphism 
 11. Access Modifier
+12. substring
 
 ## Java Object 
 * java object merupakan proses instansiasi dari sebuah java class
@@ -301,4 +302,22 @@ reference variable dengan banyak bentuk.
 ### private 
 * yaitu bisa mengakses resource dalam sebuah project, pada :
 	1. class yang sama
+	
+RULES : 
+## Logic 
+1. kerjakan sesuatu / nomor yang dianggap paling mudah
+2. tidak nyontek
+3. kerjakan pola terlebih dahulu
+4. pola harus dinamis
+5. jangan lupa harus menggunakan scanner
+
+## Database 
+1. membuat serangkaian Relasi Table.
+2. Isi table nya
+2. JOIN ke tampilan data.
+
+## Java Teory
+1. sesuai yang sudah di pelajari
+
+## GOOD LUCKy Luck ##
 	
