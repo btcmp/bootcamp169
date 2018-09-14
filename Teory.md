@@ -1,4 +1,16 @@
 # Java Teory
+## Material 
+1. Java Object 
+2. Java Class 
+3. Variable Primitive 
+4. Constructor 
+5. Overloading 
+6. Inheritance 
+7. Overriding  
+8. Super
+9. Java Beans and Encapsulation
+10. Polymorphism 
+11. Access Modifier
 
 ## Java Object 
 * java object merupakan proses instansiasi dari sebuah java class
@@ -126,13 +138,167 @@ public class MyInheritance {
     }
 }
 ```
-1. Java Object ?*
-2. Java Class ?*
-#. Variable Primitive *
-3. Constructor *
-4. Overloading *
-5. Inheritance ? *
-6. Overriding ? * 
-7. Super ?
-8. Java Beans and Encapsulation?
-9. Polymorphism ?
+
+## Overriding
+* re-define method dari super class
+* contoh : 
+```java
+class EmployeeX{ //super class
+    private String name;
+    private String email;
+    private double salary=2000;
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+    
+    //getter
+    public String getEmail() {
+        return email;
+    }
+
+    public String getName() {
+        return name;
+    }
+    
+    
+    //setter
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+}
+
+class ManagerX extends EmployeeX{ //subclass
+
+    @Override
+    public double getSalary() {
+        return super.getSalary() * 2; //To change body of generated methods, choose Tools | Templates.
+    }
+    
+}
+
+class DirectorX extends ManagerX{
+
+    @Override
+    public double getSalary() {
+        return super.getSalary() * 2; //To change body of generated methods, choose Tools | Templates.
+    }
+    
+}
+
+//key dari inhiritance adalah 'IS'
+public class MyInheritance {
+    public static void main(String[] args) {
+        EmployeeX emp = new EmployeeX();
+        //polymorphism
+        EmployeeX mng = new ManagerX();
+        DirectorX dir = new DirectorX();
+        
+        emp.setName("dono");
+        System.out.println("name : "+ emp.getName() + ", salary : "+ emp.getSalary());
+        //manager
+        mng.setName("dini");
+        System.out.println("name : "+ mng.getName() + ", salary : "+ mng.getSalary());
+        
+        //dir
+        dir.setName("denis");
+        System.out.println("name : "+ dir.getName() + ", salary : "+ dir.getSalary());       
+    }
+}
+
+```
+
+## Super keyword
+* yaitu sebuah keyword yang merujuk / memanggil resource kepada superclass
+* contoh: 
+```java
+@Override
+public double getSalary() {
+	return super.getSalary();
+}
+```
+
+## Encapsulation
+* yaitu teknik untuk membungkus / menyembunyikan properties pada suatu class (private)
+dan mengaksesnya melalui method yang public
+* Enkapsulasi adalah 
+teknik dalam java dengan membuat properties class menjadi private 
+dan membuat akses tersebut melalui method public modifier
+```java
+//encapsulation -> POJO -> java bean
+class EmployeeX{ 
+    //properties
+    private String name;
+    private String email;
+    private double salary=2000;
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+    
+    //getter
+    public String getEmail() {
+        return email;
+    }
+
+    public String getName() {
+        return name;
+    }
+    
+    
+    //setter
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+}
+```
+
+## Polymorphism
+* merupakan kemampuan dalam OOP untuk membuat object 
+reference variable dengan banyak bentuk.
+* contoh : 
+```java
+	EmployeeX employee = new DirectorX();
+```
+
+## Access Modifier
+### public 
+* yaitu bisa mengakses resource dalam sebuah project, pada : 
+	1. class yang sama
+	2. class yang berbeda 
+	3. package yang berbeda
+	
+### protected
+* yaitu bisa mengakses resource dalam sebuah project, pada :
+	1. class yang sama
+	2. class yang berbeda (masih dalam satu package yang sama)
+	3. package yang berbeda (inheritance) 
+		kecuali (hasil dari instance)
+
+### default 
+* yaitu bisa mengakses resource dalam sebuah project, pada :
+	1. class yang sama
+	2. class yang berbeda (masih dalam satu package yang sama)
+	
+### private 
+* yaitu bisa mengakses resource dalam sebuah project, pada :
+	1. class yang sama
+	
